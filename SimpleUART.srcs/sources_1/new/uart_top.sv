@@ -1,8 +1,8 @@
 module uart_top(
   input clk,
   input rst,
-  input rx,
-  output bit tx
+  input rx_top,
+  output bit tx_top
   );
 
   logic [7:0] recieved_data;
@@ -21,9 +21,9 @@ module uart_top(
     end
   end
 
-  uart_rx reciever(.clk(clk), .rst(rst), .q(rx), .data(recieved_data), .ready(recieved_data_vld));
+  uart_rx reciever(.clk(clk), .rst(rst), .q(rx_top), .data(recieved_data), .ready(recieved_data_vld));
 
-  uart_tx transmitter(.clk(clk), .rst(rst), .write_en(data_vld), .data(recieved_data), .q(tx), .busy(tx_busy));
+  uart_tx transmitter(.clk(clk), .rst(rst), .write_en(data_vld), .data(recieved_data), .q(tx_top), .busy(tx_busy));
 
     
 endmodule

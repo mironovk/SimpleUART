@@ -78,7 +78,7 @@ module uart_tb;
     #(bit_length/2) bit_clk = ~bit_clk;
   end
 
-  uart_top uut(.clk(clk), .rst(reset), .rx(tx), .tx(rx));
+  uart_top uut(.clk(clk), .rst(reset), .rx_top(tx), .tx_top(rx));
 //  uart_top test_uut();
 
 endmodule

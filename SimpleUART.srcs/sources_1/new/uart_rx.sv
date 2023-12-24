@@ -35,7 +35,7 @@ module uart_rx (
 
     case (state)
       start   : if (cnt == ticks_per_bit/2) next_state = rx_data;
-      rx_data : if (data_cnt == 7) next_state = stop;
+      rx_data : if ((data_cnt == 7) && (cnt == ticks_per_bit)) next_state = stop;
                 else               next_state = rx_data;
       stop    : if (cnt == ticks_per_bit) next_state = idle;
       idle    : if ((rx[0] == 1) && (rx[1] == 0)) next_state = start;
