@@ -3,10 +3,10 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Tue Nov 28 14:30:19 2023
-# Process ID: 14148
+# Start of session at: Wed Nov 29 15:09:58 2023
+# Process ID: 15996
 # Current directory: D:/SimpleUART
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5084 D:\SimpleUART\SimpleUART.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3000 D:\SimpleUART\SimpleUART.xpr
 # Log file: D:/SimpleUART/vivado.log
 # Journal file: D:/SimpleUART\vivado.jou
 # Running On: Windows10-bootcamp, OS: Windows, CPU Frequency: 1392 MHz, CPU Physical cores: 4, Host memory: 8428 MB
@@ -102,7 +102,582 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.1/data/ip'.
-open_project: Time (s): cpu = 00:00:32 ; elapsed = 00:00:18 . Memory (MB): peak = 1492.938 ; gain = 267.996
+open_project: Time (s): cpu = 00:00:33 ; elapsed = 00:00:19 . Memory (MB): peak = 1477.797 ; gain = 183.977
 update_compile_order -fileset sources_1
+add_files -norecurse {D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_rx.sv D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv}
+update_compile_order -fileset sources_1
+set_property is_enabled false [get_files  D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_top.sv]
+set_property top uart_tx [current_fileset]
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'uart_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'uart_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj uart_tb_vlog.prj"
+Режим вывода команд на экран (ECHO) отключен.
+Режим вывода команд на экран (ECHO) отключен.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_tx
+ERROR: [VRFC 10-2989] 'data_cnt' is not declared [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:90]
+ERROR: [VRFC 10-2989] 'data_cnt' is not declared [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:103]
+ERROR: [VRFC 10-2989] 'rst' is not declared [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:110]
+ERROR: [VRFC 10-2989] 'data_cnt' is not declared [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:111]
+ERROR: [VRFC 10-2989] 'data_cnt' is not declared [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:114]
+ERROR: [VRFC 10-2989] 'data_cnt' is not declared [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:116]
+ERROR: [VRFC 10-2989] 'rst' is not declared [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:122]
+ERROR: [VRFC 10-2989] 'rst' is not declared [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:131]
+ERROR: [VRFC 10-8530] module 'uart_tx' is ignored due to previous errors [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:1]
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-99] Step results log file:'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'uart_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'uart_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj uart_tb_vlog.prj"
+Режим вывода команд на экран (ECHO) отключен.
+Режим вывода команд на экран (ECHO) отключен.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_tx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/SimpleUART/SimpleUART.srcs/sim_1/new/uart_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_tb_behav xil_defaultlib.uart_tb xil_defaultlib.glbl -log elaborate.log"
+Режим вывода команд на экран (ECHO) отключен.
+Режим вывода команд на экран (ECHO) отключен.
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_tb_behav xil_defaultlib.uart_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-347] attempt to divide by 0; returning x [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:15]
+WARNING: [VRFC 10-3291] enum literal 'idle' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:78]
+WARNING: [VRFC 10-3291] enum literal 'start' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:79]
+WARNING: [VRFC 10-3291] enum literal 'tx_data' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:80]
+WARNING: [VRFC 10-3291] enum literal 'stop' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:81]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" Line 1. Module uart_tx_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" Line 1. Module uart_tx_default doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.uart_tx_default
+Compiling module xil_defaultlib.uart_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot uart_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "uart_tb_behav -key {Behavioral:sim_1:Functional:uart_tb} -tclbatch {uart_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source uart_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'uart_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 1584.238 ; gain = 24.055
+run 10 us
+$finish called at time : 1220 ns : File "D:/SimpleUART/SimpleUART.srcs/sim_1/new/uart_tb.sv" Line 14
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'uart_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'uart_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj uart_tb_vlog.prj"
+Режим вывода команд на экран (ECHO) отключен.
+Режим вывода команд на экран (ECHO) отключен.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_tx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/SimpleUART/SimpleUART.srcs/sim_1/new/uart_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'uart_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_tb_behav xil_defaultlib.uart_tb xil_defaultlib.glbl -log elaborate.log"
+Режим вывода команд на экран (ECHO) отключен.
+Режим вывода команд на экран (ECHO) отключен.
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_tb_behav xil_defaultlib.uart_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-347] attempt to divide by 0; returning x [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:15]
+WARNING: [VRFC 10-3291] enum literal 'idle' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:78]
+WARNING: [VRFC 10-3291] enum literal 'start' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:79]
+WARNING: [VRFC 10-3291] enum literal 'tx_data' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:80]
+WARNING: [VRFC 10-3291] enum literal 'stop' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:81]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" Line 1. Module uart_tx_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" Line 1. Module uart_tx_default doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.uart_tx_default
+Compiling module xil_defaultlib.uart_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot uart_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1587.906 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'uart_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj uart_tb_vlog.prj"
+Режим вывода команд на экран (ECHO) отключен.
+Режим вывода команд на экран (ECHO) отключен.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_tx
+ERROR: [VRFC 10-2989] 'cnt' is not declared [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:126]
+ERROR: [VRFC 10-2989] 'cnt' is not declared [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:128]
+ERROR: [VRFC 10-2989] 'cnt' is not declared [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:133]
+ERROR: [VRFC 10-2989] 'cnt' is not declared [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:134]
+ERROR: [VRFC 10-2989] 'cnt' is not declared [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:137]
+ERROR: [VRFC 10-8530] module 'uart_tx' is ignored due to previous errors [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:1]
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'uart_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj uart_tb_vlog.prj"
+Режим вывода команд на экран (ECHO) отключен.
+Режим вывода команд на экран (ECHO) отключен.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_tx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/SimpleUART/SimpleUART.srcs/sim_1/new/uart_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'uart_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_tb_behav xil_defaultlib.uart_tb xil_defaultlib.glbl -log elaborate.log"
+Режим вывода команд на экран (ECHO) отключен.
+Режим вывода команд на экран (ECHO) отключен.
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_tb_behav xil_defaultlib.uart_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3291] enum literal 'idle' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:78]
+WARNING: [VRFC 10-3291] enum literal 'start' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:79]
+WARNING: [VRFC 10-3291] enum literal 'tx_data' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:80]
+WARNING: [VRFC 10-3291] enum literal 'stop' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:81]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" Line 1. Module uart_tx_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" Line 1. Module uart_tx_default doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.uart_tx_default
+Compiling module xil_defaultlib.uart_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot uart_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 2317.094 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'uart_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj uart_tb_vlog.prj"
+Режим вывода команд на экран (ECHO) отключен.
+Режим вывода команд на экран (ECHO) отключен.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_tx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/SimpleUART/SimpleUART.srcs/sim_1/new/uart_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'uart_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_tb_behav xil_defaultlib.uart_tb xil_defaultlib.glbl -log elaborate.log"
+Режим вывода команд на экран (ECHO) отключен.
+Режим вывода команд на экран (ECHO) отключен.
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_tb_behav xil_defaultlib.uart_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3291] enum literal 'idle' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:78]
+WARNING: [VRFC 10-3291] enum literal 'start' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:79]
+WARNING: [VRFC 10-3291] enum literal 'tx_data' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:80]
+WARNING: [VRFC 10-3291] enum literal 'stop' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:81]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" Line 1. Module uart_tx_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" Line 1. Module uart_tx_default doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.uart_tx_default
+Compiling module xil_defaultlib.uart_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot uart_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 2317.094 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'uart_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj uart_tb_vlog.prj"
+Режим вывода команд на экран (ECHO) отключен.
+Режим вывода команд на экран (ECHO) отключен.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_tx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/SimpleUART/SimpleUART.srcs/sim_1/new/uart_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'uart_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_tb_behav xil_defaultlib.uart_tb xil_defaultlib.glbl -log elaborate.log"
+Режим вывода команд на экран (ECHO) отключен.
+Режим вывода команд на экран (ECHO) отключен.
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_tb_behav xil_defaultlib.uart_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3291] enum literal 'idle' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:78]
+WARNING: [VRFC 10-3291] enum literal 'start' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:79]
+WARNING: [VRFC 10-3291] enum literal 'tx_data' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:80]
+WARNING: [VRFC 10-3291] enum literal 'stop' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:81]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" Line 1. Module uart_tx_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" Line 1. Module uart_tx_default doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.uart_tx_default
+Compiling module xil_defaultlib.uart_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot uart_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 2317.094 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'uart_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj uart_tb_vlog.prj"
+Режим вывода команд на экран (ECHO) отключен.
+Режим вывода команд на экран (ECHO) отключен.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_tx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/SimpleUART/SimpleUART.srcs/sim_1/new/uart_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'uart_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_tb_behav xil_defaultlib.uart_tb xil_defaultlib.glbl -log elaborate.log"
+Режим вывода команд на экран (ECHO) отключен.
+Режим вывода команд на экран (ECHO) отключен.
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_tb_behav xil_defaultlib.uart_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3291] enum literal 'idle' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:78]
+WARNING: [VRFC 10-3291] enum literal 'start' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:79]
+WARNING: [VRFC 10-3291] enum literal 'tx_data' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:80]
+WARNING: [VRFC 10-3291] enum literal 'stop' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:81]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" Line 1. Module uart_tx doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" Line 1. Module uart_tx doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.uart_tx
+Compiling module xil_defaultlib.uart_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot uart_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 2317.094 ; gain = 0.000
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'uart_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj uart_tb_vlog.prj"
+Режим вывода команд на экран (ECHO) отключен.
+Режим вывода команд на экран (ECHO) отключен.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_tx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/SimpleUART/SimpleUART.srcs/sim_1/new/uart_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'uart_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_tb_behav xil_defaultlib.uart_tb xil_defaultlib.glbl -log elaborate.log"
+Режим вывода команд на экран (ECHO) отключен.
+Режим вывода команд на экран (ECHO) отключен.
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_tb_behav xil_defaultlib.uart_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3291] enum literal 'idle' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:78]
+WARNING: [VRFC 10-3291] enum literal 'start' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:79]
+WARNING: [VRFC 10-3291] enum literal 'tx_data' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:80]
+WARNING: [VRFC 10-3291] enum literal 'stop' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:81]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" Line 1. Module uart_tx doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" Line 1. Module uart_tx doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.uart_tx
+Compiling module xil_defaultlib.uart_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot uart_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 2317.094 ; gain = 0.000
+run 100 us
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'uart_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj uart_tb_vlog.prj"
+Режим вывода команд на экран (ECHO) отключен.
+Режим вывода команд на экран (ECHO) отключен.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_tx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/SimpleUART/SimpleUART.srcs/sim_1/new/uart_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'uart_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_tb_behav xil_defaultlib.uart_tb xil_defaultlib.glbl -log elaborate.log"
+Режим вывода команд на экран (ECHO) отключен.
+Режим вывода команд на экран (ECHO) отключен.
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_tb_behav xil_defaultlib.uart_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3291] enum literal 'idle' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:78]
+WARNING: [VRFC 10-3291] enum literal 'start' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:79]
+WARNING: [VRFC 10-3291] enum literal 'tx_data' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:80]
+WARNING: [VRFC 10-3291] enum literal 'stop' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:81]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" Line 1. Module uart_tx doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" Line 1. Module uart_tx doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.uart_tx
+Compiling module xil_defaultlib.uart_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot uart_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 2317.094 ; gain = 0.000
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'uart_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj uart_tb_vlog.prj"
+Режим вывода команд на экран (ECHO) отключен.
+Режим вывода команд на экран (ECHO) отключен.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_tx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/SimpleUART/SimpleUART.srcs/sim_1/new/uart_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_tb
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'uart_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/SimpleUART/SimpleUART.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_tb_behav xil_defaultlib.uart_tb xil_defaultlib.glbl -log elaborate.log"
+Режим вывода команд на экран (ECHO) отключен.
+Режим вывода команд на экран (ECHO) отключен.
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_tb_behav xil_defaultlib.uart_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3291] enum literal 'idle' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:78]
+WARNING: [VRFC 10-3291] enum literal 'start' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:79]
+WARNING: [VRFC 10-3291] enum literal 'tx_data' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:80]
+WARNING: [VRFC 10-3291] enum literal 'stop' width (4) must match enum width (2) [D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv:81]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" Line 1. Module uart_tx doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/SimpleUART/SimpleUART.srcs/sources_1/new/uart_tx.sv" Line 1. Module uart_tx doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.uart_tx
+Compiling module xil_defaultlib.uart_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot uart_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 2317.094 ; gain = 0.000
+run 10 us
+save_wave_config {D:/SimpleUART/uart_tb_behav.wcfg}
+add_files -fileset sim_1 -norecurse D:/SimpleUART/uart_tb_behav.wcfg
+set_property xsim.view D:/SimpleUART/uart_tb_behav.wcfg [get_filesets sim_1]
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
 exit
-INFO: [Common 17-206] Exiting Vivado at Tue Nov 28 19:14:19 2023...
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 30 08:11:24 2023...
