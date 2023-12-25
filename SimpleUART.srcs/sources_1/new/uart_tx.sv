@@ -6,19 +6,24 @@ module uart_tx (
   output logic q,
   output logic busy 
 );
-  localparam logic clk_mhz = 50;              //  Частота тактового генератора ПЛ�?С
 
-  // localparam logic speed = 9600;             // Частота передачи bit/s
-  // localparam logic ticks_per_bit = 5208;     //  Для скорости передачи 9600 bit/s
-  localparam logic [$clog2(115200)-1:0] speed = 115200;            // Частота передачи bit/s
-  localparam logic [$clog2(434)-1:0] ticks_per_bit = 434;       //  Для скорости передачи 115200 bit/s
+  localparam logic clk_mhz = 100; //  Частота тактового генератора ПЛИС
+  localparam logic [$clog2(115200)-1:0] speed = 115200; // Частота передачи bit/s
+  localparam logic [$clog2(868)-1:0] ticks_per_bit = 868; //  Для скорости передачи 115200 bit/s
+
+  // localparam logic clk_mhz = 50;              //  Частота тактового генератора ПЛ�?С
+
+  // // localparam logic speed = 9600;             // Частота передачи bit/s
+  // // localparam logic ticks_per_bit = 5208;     //  Для скорости передачи 9600 bit/s
+  // localparam logic [$clog2(115200)-1:0] speed = 115200;            // Частота передачи bit/s
+  // localparam logic [$clog2(434)-1:0] ticks_per_bit = 434;       //  Для скорости передачи 115200 bit/s
   // localparam logic [$clog2(clk_mhz * 1000 * 1000 / speed)-1:0] ticks_per_bit = clk_mhz * 1000 * 1000 / speed; //  Для скорости передачи 115200 bit/s
 
   // localparam w_cnt = $clog2(ticks_per_bit);  //  Вычисление требуемой разрядности счетчика
 
-  logic [$clog2(ticks_per_bit)-1:0] cnt = '0;                   //  Счетчик для обеспечения заданной частоты 115200
-  logic [3:0] data_cnt = '0;
-  logic [7:0] internal_data = '0;
+  logic [$clog2(ticks_per_bit)-1:0] cnt;                   //  Счетчик для обеспечения заданной частоты 115200
+  logic [3:0] data_cnt;
+  logic [7:0] internal_data;
 
 
   //  States
@@ -57,7 +62,7 @@ module uart_tx (
   end
 
   always_ff @(posedge clk) begin : data_counter
-    if (rst) begin
+    if (~rst) begin
       data_cnt <= '0;
     end else if (~ busy) begin
       internal_data <= data;
@@ -71,7 +76,7 @@ module uart_tx (
   
   // State update
   always_ff @ (posedge clk) begin : state_memory
-    if (rst) begin
+    if (~rst) begin
       state <= idle;
     end 
     else begin // if (cnt == ticks_per_bit) 
@@ -81,7 +86,7 @@ module uart_tx (
   end
 
   always_ff @(posedge clk) begin : speed_clk
-    if (rst || (cnt == ticks_per_bit) || (write_en == 1)) begin
+    if (~rst || (cnt == ticks_per_bit) || (write_en == 1)) begin
       cnt <= '0;
     end
     else begin

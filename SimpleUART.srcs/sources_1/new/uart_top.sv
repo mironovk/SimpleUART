@@ -1,16 +1,20 @@
 module uart_top(
   input clk,
   input rst,
+  // (* mark_debug = "true" *) input rx_top,
+  // (* mark_debug = "true" *) output bit tx_top
   input rx_top,
   output bit tx_top
   );
 
+  // (* mark_debug = "true" *) logic [7:0] recieved_data;
   logic [7:0] recieved_data;
   logic recieved_data_vld;
   logic data_vld;
   logic [1:0] data_vld_reg;
 
-  logic tx_busy = 1'b0; 
+  // (* mark_debug = "true" *) logic tx_busy;
+  logic tx_busy; 
 
   always_ff @(posedge clk) begin
     data_vld_reg <= {recieved_data_vld, data_vld_reg[1]};

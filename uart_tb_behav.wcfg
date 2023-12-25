@@ -12,14 +12,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="336.000001 us"></ZoomEndTime>
-      <Cursor1Time time="226.400000 us"></Cursor1Time>
+      <ZoomEndTime time="523.861005 us"></ZoomEndTime>
+      <Cursor1Time time="300.000000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="325"></NameColumnWidth>
-      <ValueColumnWidth column_width="130"></ValueColumnWidth>
+      <NameColumnWidth column_width="323"></NameColumnWidth>
+      <ValueColumnWidth column_width="116"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="18" />
+   <WVObjectSize size="12" />
    <wvobject fp_name="/uart_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -44,6 +44,10 @@
       <obj_property name="ElementShortName">rx</obj_property>
       <obj_property name="ObjectShortName">rx</obj_property>
    </wvobject>
+   <wvobject fp_name="/uart_tb/uut/rx_top" type="logic">
+      <obj_property name="ElementShortName">rx_top</obj_property>
+      <obj_property name="ObjectShortName">rx_top</obj_property>
+   </wvobject>
    <wvobject fp_name="/uart_tb/uut/recieved_data" type="array">
       <obj_property name="ElementShortName">recieved_data[7:0]</obj_property>
       <obj_property name="ObjectShortName">recieved_data[7:0]</obj_property>
@@ -60,40 +64,8 @@
       <obj_property name="ElementShortName">tx_busy</obj_property>
       <obj_property name="ObjectShortName">tx_busy</obj_property>
    </wvobject>
-   <wvobject fp_name="/uart_tb/uut/rx" type="logic">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">rx</obj_property>
-      <obj_property name="ObjectShortName">rx</obj_property>
-      <obj_property name="label">rx_top</obj_property>
-   </wvobject>
-   <wvobject fp_name="/uart_tb/uut/transmitter/next_state" type="array">
-      <obj_property name="ElementShortName">next_state[3:0]</obj_property>
-      <obj_property name="ObjectShortName">next_state[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/uart_tb/uut/transmitter/state" type="array">
-      <obj_property name="ElementShortName">state[3:0]</obj_property>
-      <obj_property name="ObjectShortName">state[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/uart_tb/uut/transmitter/data_cnt" type="array">
-      <obj_property name="ElementShortName">data_cnt[3:0]</obj_property>
-      <obj_property name="ObjectShortName">data_cnt[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/uart_tb/uut/transmitter/cnt" type="array">
-      <obj_property name="ElementShortName">cnt[8:0]</obj_property>
-      <obj_property name="ObjectShortName">cnt[8:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/uart_tb/uut/transmitter/internal_data" type="array">
-      <obj_property name="ElementShortName">internal_data[7:0]</obj_property>
-      <obj_property name="ObjectShortName">internal_data[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/uart_tb/uut/transmitter/busy" type="logic">
-      <obj_property name="ElementShortName">busy</obj_property>
-      <obj_property name="ObjectShortName">busy</obj_property>
-   </wvobject>
-   <wvobject fp_name="/uart_tb/uut/tx" type="logic">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">tx</obj_property>
-      <obj_property name="ObjectShortName">tx</obj_property>
-      <obj_property name="label">tx_top</obj_property>
+   <wvobject fp_name="/uart_tb/uut/tx_top" type="logic">
+      <obj_property name="ElementShortName">tx_top</obj_property>
+      <obj_property name="ObjectShortName">tx_top</obj_property>
    </wvobject>
 </wave_config>

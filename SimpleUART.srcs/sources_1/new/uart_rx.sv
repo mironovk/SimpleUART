@@ -5,17 +5,23 @@ module uart_rx (
   output logic [7:0] data,
   output logic ready
 );
-  localparam logic clk_mhz = 50;              //  Частота тактового генератора ПЛ�?С
 
+  localparam logic clk_mhz = 100; //  Частота тактового генератора ПЛИС
+  localparam logic [$clog2(115200)-1:0] speed = 115200; // Частота передачи bit/s
+  localparam logic [$clog2(868)-1:0] ticks_per_bit = 868; //  Для скорости передачи 115200 bit/s
+
+  // localparam logic clk_mhz = 50;              //  Частота тактового генератора ПЛИС
+  
   // localparam logic speed = 9600;             // Частота передачи bit/s
   // localparam logic ticks_per_bit = 5208;     //  Для скорости передачи 9600 bit/s
-  localparam logic [$clog2(115200)-1:0] speed = 115200;            // Частота передачи bit/s
-  localparam logic [$clog2(434)-1:0] ticks_per_bit = 434;       //  Для скорости передачи 115200 bit/s
+  
+  // localparam logic [$clog2(434)-1:0] ticks_per_bit = 434;       //  Для скорости передачи 115200 bit/s
+  
   // localparam logic [$clog2(clk_mhz * 1000 * 1000 / speed)-1:0] ticks_per_bit = clk_mhz * 1000 * 1000 / speed; //  Для скорости передачи 115200 bit/s
 
-  logic [$clog2(ticks_per_bit)-1:0] cnt = '0;      //  Счетчик для обеспечения заданной частоты 115200
-  logic [3:0] data_cnt = '0;
-  logic [7:0] data_reg = '0;
+  logic [$clog2(ticks_per_bit)-1:0] cnt;      //  Счетчик для обеспечения заданной частоты 115200
+  logic [3:0] data_cnt;
+  logic [7:0] data_reg;
 
   logic [3:0] rx; // Регистр сдвига для детектирования перепада 1->0 (начало передачи)
 
@@ -55,16 +61,17 @@ module uart_rx (
   always_ff @(posedge clk) begin : shift_register
     if ((state == rx_data) && (cnt == ticks_per_bit)) begin
       data_reg[7:0] <= {rx[0], data_reg[7:1]};
-    end else if (cnt == ticks_per_bit) begin
-      data_cnt <= data_cnt + 1'b1;
-    end
+    end 
+    // else if (cnt == ticks_per_bit) begin
+    //   data_cnt <= data_cnt + 1'b1;
+    // end
   end
 
   always_ff @(posedge clk) begin : data_counter
-    if (rst) begin
+    if (~rst) begin
       data_cnt <= '0;
       rx <= '0;
-      data <= '0;
+      // data <= '0;
     end else begin
       rx[3:0] <= {q, rx[3:1]};
 
@@ -78,7 +85,7 @@ module uart_rx (
   
   // State update
   always_ff @ (posedge clk) begin : state_memory
-    if (rst) begin
+    if (~rst) begin
       state <= idle;
     end 
     else begin // if (cnt == ticks_per_bit) 
@@ -88,7 +95,7 @@ module uart_rx (
   end
 
   always_ff @(posedge clk) begin : speed_clk
-    if (rst || (cnt == ticks_per_bit)) begin
+    if (~rst || (cnt == ticks_per_bit)) begin
       cnt <= '0;
     end
     else begin
